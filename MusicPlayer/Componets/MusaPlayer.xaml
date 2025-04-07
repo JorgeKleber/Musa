@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MusicPlayer.Componets.MusaPlayer"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="MusaPlayer">
+
+    <VerticalStackLayout Padding="20">
+
+        <toolkit:MediaElement x:Name="AudioPlayer"
+                              ShouldShowPlaybackControls="True"
+                              ShouldAutoPlay="True"/>
+
+        <Entry x:Name="SearchEntry" Placeholder="Search for a song or artist" />
+        <Button Text="Search" Clicked="OnSearchClicked" />
+
+        <CollectionView x:Name="MusicList" SelectionMode="Single" SelectionChanged="OnItemSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding title}" FontAttributes="Bold" />
+                        <Label Text="{Binding artist.name}" FontSize="12" TextColor="Gray" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>
