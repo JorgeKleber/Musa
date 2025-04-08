@@ -8,6 +8,7 @@
     <VerticalStackLayout Padding="20">
 
         <toolkit:MediaElement x:Name="AudioPlayer"
+                              Source="ms-appx:///Resources/Audio/audioTest.mp3"
                               ShouldShowPlaybackControls="True"
                               ShouldAutoPlay="True"/>
 

@@ -1,12 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:views="clr-namespace:MusicPlayer.Views"
-             Shell.NavBarIsVisible="False"
-             x:Class="MusicPlayer.MainPage">
-
+             BackgroundColor="#90000000"
+             x:Class="MusicPlayer.Views.MusicHub">
     <!--<Grid>
+        <Label 
+            Text="Hub de musica"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </Grid>-->
+
+    <Grid>
         <StackLayout TranslationY="200" VerticalOptions="Center" HorizontalOptions="Center">
             <StackLayout Orientation="Horizontal"
                          Spacing="40"
@@ -40,31 +45,5 @@
                 <ImageButton Grid.Column="2" Source="forward_button.png"/>
             </Grid>
         </StackLayout>
-    </Grid>-->
-
-    <Grid>
-
-        <Image x:Name="ParallaxImage"
-               Source="evancescence.jpg"
-               Aspect="Center" />
-
-        <CarouselView Loop="False"
-                      Scrolled="CarouselView_Scrolled"
-                      HorizontalScrollBarVisibility="Never">
-            <CarouselView.ItemsSource>
-                <x:Array Type="{x:Type View}">
-                    <views:RecentlyPlayed />
-                    <views:MusicHub />
-                    <views:SearchPage />
-                </x:Array>
-            </CarouselView.ItemsSource>
-
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <ContentView Content="{Binding .}" />
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
     </Grid>
-
-</ContentPage>
+</ContentView>

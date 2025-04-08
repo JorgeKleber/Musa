@@ -1,4 +1,7 @@
-﻿using System.Net.Http.Json;
+﻿using Microsoft.Maui.Controls;
+using MusicPlayer.Views;
+using System.Collections.ObjectModel;
+using System.Net.Http.Json;
 
 namespace MusicPlayer
 {
@@ -7,6 +10,12 @@ namespace MusicPlayer
 		public MainPage()
 		{
 			InitializeComponent();
+		}
+
+		private void CarouselView_Scrolled(object sender, ItemsViewScrolledEventArgs e)
+		{
+			var deslocamento = e.HorizontalOffset;
+			ParallaxImage.TranslationX = -deslocamento * 0.5;
 		}
 
 	}

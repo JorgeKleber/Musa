@@ -1,0 +1,8 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="forward_button">
+<circle id="Ellipse 5" cx="30" cy="30" r="29" stroke="white" stroke-width="2"/>
+<g id="skip-next">
+<path id="Vector" d="M36 39H39V21H36V39ZM21 39L33.75 30L21 21V39Z" fill="white"/>
+</g>
+</g>
+</svg>

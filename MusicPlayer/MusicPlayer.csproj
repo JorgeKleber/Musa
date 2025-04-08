@@ -44,6 +44,15 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\backaward_button.svg" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\favorite.svg" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\favorite_pressed.svg" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\forward_button.svg" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\like_button.svg" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\like_button_pressed.svg" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\pause_button.svg" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\unlike_button.svg" />
+		<MauiImage Include="Resources\AppIcon\PlayerIcons\unlike_button_pressed.svg" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -57,6 +66,19 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\AppIcon\PlayerIcons\backaward_button.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\favorite.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\favorite_pressed.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\forward_button.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\like_button.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\like_button_pressed.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\pause_button.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\Play.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\unlike_button.svg" />
+	  <None Remove="Resources\AppIcon\PlayerIcons\unlike_button_pressed.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -76,11 +98,23 @@
 	  <MauiXaml Update="Componets\MusaPlayer.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\MusicHub.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RecentlyPlayed.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SearchPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Views\" />
 	  <Folder Include="ViewModels\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\AppIcon\PlayerIcons\play.svg" />
 	</ItemGroup>
 
 </Project>
