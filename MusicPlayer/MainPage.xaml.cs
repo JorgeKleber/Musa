@@ -15,7 +15,7 @@ namespace MusicPlayer
 		private void CarouselView_Scrolled(object sender, ItemsViewScrolledEventArgs e)
 		{
 			var deslocamento = e.HorizontalOffset;
-			ParallaxImage.TranslationX = -deslocamento * 0.5;
+			ParallaxImage.TranslationX = 200 - (deslocamento * 0.5);
 		}
 
 	}

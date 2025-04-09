@@ -95,7 +95,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
+    	<!-- Inclua as fontes que quiser (cada arquivo .ttf ou .otf precisa de uma linha). -->
+    	<MauiFont Include="Resources/Fonts/SegoeWP-Black.ttf" Alias="SegoeWPRegular" />
+		<MauiFont Include="Resources/Fonts/SegoeWP-Bold.ttf" Alias="SegoeWPBold" />
+		<MauiFont Include="Resources/Fonts/SegoeWP-Light.ttf" Alias="SegoeWPLight" />
+		<MauiFont Include="Resources/Fonts/SegoeWP-Semibold.ttf" Alias="SegoeWPSemibold" />
+		<MauiFont Include="Resources/Fonts/SegoeWP-Semilight.ttf" Alias="SegoeWPSemilight" />
+    </ItemGroup>
+
+
+	<ItemGroup>
 	  <MauiXaml Update="Componets\MusaPlayer.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Componets\TitleCard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MusicHub.xaml">
@@ -110,11 +123,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ViewModels\" />
+	  <MauiImage Include="Resources\AppIcon\PlayerIcons\play.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Include="Resources\AppIcon\PlayerIcons\play.svg" />
+	  <Compile Update="Componets\TitleCard.xaml.cs">
+	    <DependentUpon>TitleCard.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

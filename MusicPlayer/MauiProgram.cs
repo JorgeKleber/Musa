@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using MusicPlayer.Services;
 
 namespace MusicPlayer
 {
@@ -22,7 +23,11 @@ namespace MusicPlayer
     		builder.Logging.AddDebug();
 #endif
 
-            return builder.Build();
+			const string baseUrl = "http://192.168.3.11:5000";
+			//const string baseUrl = "http://10.0.2.2:5000";
+			builder.Services.AddSingleton<MusicApiService>(new MusicApiService(baseUrl));
+
+			return builder.Build();
         }
     }
 }

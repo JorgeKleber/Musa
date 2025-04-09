@@ -1,12 +1,101 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             BackgroundColor="#90000000"
+             xmlns:controls="clr-namespace:MusicPlayer.Componets"
              x:Class="MusicPlayer.Views.RecentlyPlayed">
     <Grid>
-        <Label 
-            Text="Músicas Rencé tocadas!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" 
+              Margin="20,0"
+              RowSpacing="15"
+              ColumnSpacing="15">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Left Side-->
+            
+            <controls:TitleCard Title="Evancescence"
+                                Grid.Row="0"
+                                ImageSource="fallen.jpg" 
+                                WidthDefinition="150"
+                                HeightDefinition="150" 
+                                HorizontalOptions="End"/>
+
+            <controls:TitleCard Title="Evancescence"
+                                Grid.Row="1"
+                                ImageSource="fallen.jpg" 
+                                WidthDefinition="150"
+                                HeightDefinition="150"
+                                HorizontalOptions="End"
+                                VisibilityFlag="False"/>
+
+            <controls:TitleCard Title="Evancescence"
+                                Grid.Row="2"
+                                ImageSource="fallen.jpg" 
+                                WidthDefinition="100"
+                                HeightDefinition="100"
+                                HorizontalOptions="End"
+                                VisibilityFlag="False"/>
+
+            <!--Right Side-->
+
+            <controls:TitleCard Title="Evancescence"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                ImageSource="fallen.jpg" 
+                                WidthDefinition="100"
+                                HeightDefinition="100" 
+                                HorizontalOptions="Start"
+                                VerticalOptions="End"
+                                VisibilityFlag="False"/>
+
+            <controls:TitleCard Title="Evancescence"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                ImageSource="fallen.jpg" 
+                                WidthDefinition="170"
+                                HeightDefinition="170"
+                                HorizontalOptions="Start"
+                                VerticalOptions="End"
+                                VisibilityFlag="true"/>
+
+            <controls:TitleCard Title="Evancescence"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                ImageSource="fallen.jpg" 
+                                WidthDefinition="130"
+                                HeightDefinition="130"
+                                HorizontalOptions="Start"
+                                VerticalOptions="End"/>
+            
+            <controls:TitleCard Title="Evancescence"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                ImageSource="fallen.jpg" 
+                                WidthDefinition="170"
+                                HeightDefinition="170"
+                                HorizontalOptions="Start"
+                                VerticalOptions="End"
+                                VisibilityFlag="False"/>
+
+
+
+        </Grid>
+        
     </Grid>
 </ContentView>

@@ -6,56 +6,35 @@
              Shell.NavBarIsVisible="False"
              x:Class="MusicPlayer.MainPage">
 
-    <!--<Grid>
-        <StackLayout TranslationY="200" VerticalOptions="Center" HorizontalOptions="Center">
-            <StackLayout Orientation="Horizontal"
-                         Spacing="40"
-                         Margin="10,0,0,10">
-
-                <Image Source="fallen.jpg" 
-                   HorizontalOptions="Center" 
-                   VerticalOptions="Start" 
-                   Aspect="AspectFit"
-                   WidthRequest="100"
-                   HeightRequest="100"/>
-
-                <ImageButton Source="like_button.png"/>
-                <ImageButton Source="unlike_button.png"/>
-                <ImageButton Source="favorite.png"/>
-            </StackLayout>
-
-            <toolkit:MediaElement x:Name="AudioPlayer"
-                                  ShouldShowPlaybackControls="True"
-                                  ShouldAutoPlay="True"
-                                  Margin="25,0,25,30"/>
-
-            <Grid VerticalOptions="Center" HorizontalOptions="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <ImageButton Grid.Column="0" Source="backaward_button.png"/>
-                <ImageButton Grid.Column="1" Source="play.png" Margin="50,0"/>
-                <ImageButton Grid.Column="2" Source="forward_button.png"/>
-            </Grid>
-        </StackLayout>
-    </Grid>-->
-
     <Grid>
-
+        
         <Image x:Name="ParallaxImage"
                Source="evancescence.jpg"
-               Aspect="Center" />
+               Aspect="Center"
+               AnchorX="0" TranslationX="200" />
+
+        <Border BackgroundColor="Black" Opacity="0.5"/>
+
+        <HorizontalStackLayout>
+            <Label FontSize="50"
+                   FontFamily="SegoeWP-Bold"
+                   Margin="20,10,0,50" 
+                   TextColor="White">Maui</Label>
+            <Label FontSize="50"
+                   FontFamily="SegoeWP-Light"
+                   Margin="0,10,0,50" 
+                   TextColor="White">Radio</Label>
+        </HorizontalStackLayout>
 
         <CarouselView Loop="False"
+                      PeekAreaInsets="10"
                       Scrolled="CarouselView_Scrolled"
                       HorizontalScrollBarVisibility="Never">
             <CarouselView.ItemsSource>
-                <x:Array Type="{x:Type View}">
+                <x:Array Type="{x:Type ContentView}">
                     <views:RecentlyPlayed />
-                    <views:MusicHub />
                     <views:SearchPage />
+                    <views:MusicHub />
                 </x:Array>
             </CarouselView.ItemsSource>
 

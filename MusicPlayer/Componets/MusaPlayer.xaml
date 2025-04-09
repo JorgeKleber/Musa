@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MusicPlayer.Componets.MusaPlayer"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:media="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              Title="MusaPlayer">
 
-    <VerticalStackLayout Padding="20">
+    <!--<VerticalStackLayout Padding="20">
 
         <toolkit:MediaElement x:Name="AudioPlayer"
                               Source="ms-appx:///Resources/Audio/audioTest.mp3"
@@ -26,6 +26,23 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
+    </VerticalStackLayout>-->
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+        <Image x:Name="CoverImage"
+               WidthRequest="200" HeightRequest="200"
+               HorizontalOptions="Center"
+               Aspect="AspectFill" />
+
+        <Label x:Name="TitleLabel" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Label x:Name="ArtistLabel" FontSize="18" HorizontalOptions="Center" />
+        <Label x:Name="AlbumLabel" FontSize="16" HorizontalOptions="Center" />
+
+        <!-- Player de áudio -->
+        <media:MediaElement x:Name="AudioPlayer"
+                            ShouldShowPlaybackControls="True"
+                            ShouldAutoPlay="True"
+                            VerticalOptions="Center" />
     </VerticalStackLayout>
 
 </ContentPage>
