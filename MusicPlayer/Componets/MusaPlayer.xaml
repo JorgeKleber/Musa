@@ -40,7 +40,7 @@
 
         <!-- Player de áudio -->
         <media:MediaElement x:Name="AudioPlayer"
-                            ShouldShowPlaybackControls="True"
+                            ShouldShowPlaybackControls="False"
                             ShouldAutoPlay="True"
                             VerticalOptions="Center" />
     </VerticalStackLayout>
