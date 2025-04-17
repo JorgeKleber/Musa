@@ -32,12 +32,6 @@ public partial class SearchPage : ContentView
 		await _viewModel.LoadMusics();
 	}
 
-	//protected override async void OnAppearing()
-	//{
-	//	base.OnAppearing();
-	//	await _viewModel.LoadMusics();
-	//}
-
 	private void OnMusicSelected(object sender, SelectionChangedEventArgs e)
 	{
 		if (e.CurrentSelection.Count > 0)

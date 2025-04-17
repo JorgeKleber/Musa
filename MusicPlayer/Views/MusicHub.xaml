@@ -16,7 +16,7 @@
                          Spacing="40"
                          Margin="10,0,0,10">
 
-                <Image Source="fallen.jpg" 
+                <Image Source="default_album.png" 
                    HorizontalOptions="Center" 
                    VerticalOptions="Start" 
                    Aspect="AspectFit"

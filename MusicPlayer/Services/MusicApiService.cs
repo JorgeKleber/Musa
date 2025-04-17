@@ -35,5 +35,11 @@ namespace MusicPlayer.Services
 			var result = await _httpClient.GetFromJsonAsync<MusicInfo>($"/musics/{id}");
 			return result;
 		}
+
+		public async Task<List<ImageInfo>> GetAllImages()
+		{
+			var result = await _httpClient.GetFromJsonAsync<List<ImageInfo>>("/images");
+			return result ?? new List<ImageInfo>();
+		}
 	}
 }

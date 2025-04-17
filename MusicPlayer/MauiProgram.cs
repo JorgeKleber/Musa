@@ -23,8 +23,7 @@ namespace MusicPlayer
     		builder.Logging.AddDebug();
 #endif
 
-			const string baseUrl = "http://192.168.3.11:5000";
-			//const string baseUrl = "http://10.0.2.2:5000";
+			const string baseUrl = "http://192.168.1.4:5000";
 			builder.Services.AddSingleton<MusicApiService>(new MusicApiService(baseUrl));
 
 			return builder.Build();

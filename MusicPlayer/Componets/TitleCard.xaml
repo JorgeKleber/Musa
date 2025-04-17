@@ -12,7 +12,7 @@
         </Grid.RowDefinitions>
 
         <Image x:Name="TitleImage"
-               Source="fallen.jpg"
+               Source="default_album.png"
                Grid.RowSpan="2"/>
 
         <Grid x:Name="TitleFlag" Grid.Row="1">

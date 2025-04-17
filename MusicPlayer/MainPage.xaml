@@ -9,7 +9,7 @@
     <Grid>
         
         <Image x:Name="ParallaxImage"
-               Source="evancescence.jpg"
+               Source="linkinparkbackground.png"
                Aspect="Center"
                AnchorX="0" TranslationX="200" />
 

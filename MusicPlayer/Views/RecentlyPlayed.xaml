@@ -29,69 +29,69 @@
 
             <!--Left Side-->
             
-            <controls:TitleCard Title="Evancescence"
+            <controls:TitleCard Title="{Binding Card1.Artista}"
                                 Grid.Row="0"
-                                ImageSource="fallen.jpg" 
+                                ImageSource="{Binding Card1.ImageUrl}" 
                                 WidthDefinition="150"
                                 HeightDefinition="150" 
                                 HorizontalOptions="End"/>
 
-            <controls:TitleCard Title="Evancescence"
+            <controls:TitleCard Title="{Binding Card2.Artista}"
                                 Grid.Row="1"
-                                ImageSource="fallen.jpg" 
+                                ImageSource="{Binding Card2.ImageUrl}" 
                                 WidthDefinition="150"
                                 HeightDefinition="150"
                                 HorizontalOptions="End"
-                                VisibilityFlag="False"/>
+                                VisibilityFlag="true"/>
 
-            <controls:TitleCard Title="Evancescence"
+            <controls:TitleCard Title="{Binding Card3.Artista}"
                                 Grid.Row="2"
-                                ImageSource="fallen.jpg" 
+                                ImageSource="{Binding Card3.ImageUrl}" 
                                 WidthDefinition="100"
                                 HeightDefinition="100"
                                 HorizontalOptions="End"
-                                VisibilityFlag="False"/>
+                                VisibilityFlag="false"/>
 
             <!--Right Side-->
 
-            <controls:TitleCard Title="Evancescence"
+            <controls:TitleCard Title="{Binding Card4.Artista}"
                                 Grid.Row="0"
                                 Grid.Column="1"
-                                ImageSource="fallen.jpg" 
+                                ImageSource="{Binding Card4.ImageUrl}" 
                                 WidthDefinition="100"
                                 HeightDefinition="100" 
                                 HorizontalOptions="Start"
                                 VerticalOptions="End"
                                 VisibilityFlag="False"/>
 
-            <controls:TitleCard Title="Evancescence"
+            <controls:TitleCard Title="{Binding Card5.Artista}"
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                ImageSource="fallen.jpg" 
+                                ImageSource="{Binding Card5.ImageUrl}"  
                                 WidthDefinition="170"
                                 HeightDefinition="170"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End"
                                 VisibilityFlag="true"/>
 
-            <controls:TitleCard Title="Evancescence"
+            <controls:TitleCard Title="{Binding Card6.Artista}"
                                 Grid.Row="2"
                                 Grid.Column="1"
-                                ImageSource="fallen.jpg" 
+                                ImageSource="{Binding Card6.ImageUrl}"
                                 WidthDefinition="130"
                                 HeightDefinition="130"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End"/>
-            
-            <controls:TitleCard Title="Evancescence"
+
+            <controls:TitleCard Title="{Binding Card7.Artista}"
                                 Grid.Row="3"
                                 Grid.Column="1"
-                                ImageSource="fallen.jpg" 
+                                ImageSource="{Binding Card7.ImageUrl}"
                                 WidthDefinition="170"
                                 HeightDefinition="170"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End"
-                                VisibilityFlag="False"/>
+                                VisibilityFlag="true"/>
 
 
 
