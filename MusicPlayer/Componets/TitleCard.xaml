@@ -16,7 +16,7 @@
                Grid.RowSpan="2"/>
 
         <Grid x:Name="TitleFlag" Grid.Row="1">
-            <Border BackgroundColor="Green" Opacity="0.6" />
+            <Border BackgroundColor="Green" Opacity="0.6"/>
 
             <Label x:Name="ArtistName"
                Text="Evanescence" 

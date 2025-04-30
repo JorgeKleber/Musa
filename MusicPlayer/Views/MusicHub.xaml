@@ -3,46 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MusicPlayer.Views.MusicHub">
-    <!--<Grid>
-        <Label 
-            Text="Hub de musica"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </Grid>-->
 
     <Grid>
-        <StackLayout TranslationY="200" VerticalOptions="Center" HorizontalOptions="Center">
-            <StackLayout Orientation="Horizontal"
-                         Spacing="40"
-                         Margin="10,0,0,10">
-
-                <Image Source="default_album.png" 
-                   HorizontalOptions="Center" 
-                   VerticalOptions="Start" 
-                   Aspect="AspectFit"
-                   WidthRequest="100"
-                   HeightRequest="100"/>
-
-                <ImageButton Source="like_button.png"/>
-                <ImageButton Source="unlike_button.png"/>
-                <ImageButton Source="favorite.png"/>
-            </StackLayout>
-
-            <toolkit:MediaElement x:Name="AudioPlayer"
-                                  ShouldShowPlaybackControls="false"
-                                  ShouldAutoPlay="True"
-                                  Margin="25,0,25,30"/>
-
-            <Grid VerticalOptions="Center" HorizontalOptions="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <ImageButton Grid.Column="0" Source="backaward_button.png"/>
-                <ImageButton Grid.Column="1" Source="play.png" Margin="50,0"/>
-                <ImageButton Grid.Column="2" Source="forward_button.png"/>
-            </Grid>
-        </StackLayout>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <VerticalStackLayout Grid.Row="1">
+            <Label Text="Busca" FontSize="24" FontFamily="SegoeWP-Light" Margin="0,0,0,10"/>
+            <Entry Placeholder="Música, Artista ou album" PlaceholderColor="Gray"/>
+        </VerticalStackLayout>
     </Grid>
 </ContentView>

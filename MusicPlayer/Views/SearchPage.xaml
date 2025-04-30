@@ -6,7 +6,7 @@
     
     
     <VerticalStackLayout Margin="0,100,0,0" Padding="10" Spacing="10">
-        <Label Text="Lista de Músicas" FontSize="24" />
+        <Label Text="Favoritas" FontSize="24" />
 
         <!-- Coleção que exibe cada música -->
         <CollectionView ItemsSource="{Binding Musics}" SelectionMode="Single"

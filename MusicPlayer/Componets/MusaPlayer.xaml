@@ -3,32 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MusicPlayer.Componets.MusaPlayer"
              xmlns:media="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Shell.NavBarIsVisible="False"
              Title="MusaPlayer">
 
-    <!--<VerticalStackLayout Padding="20">
-
-        <toolkit:MediaElement x:Name="AudioPlayer"
-                              Source="ms-appx:///Resources/Audio/audioTest.mp3"
-                              ShouldShowPlaybackControls="True"
-                              ShouldAutoPlay="True"/>
-
-        <Entry x:Name="SearchEntry" Placeholder="Search for a song or artist" />
-        <Button Text="Search" Clicked="OnSearchClicked" />
-
-        <CollectionView x:Name="MusicList" SelectionMode="Single" SelectionChanged="OnItemSelected">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="10">
-                        <Label Text="{Binding title}" FontAttributes="Bold" />
-                        <Label Text="{Binding artist.name}" FontSize="12" TextColor="Gray" />
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
-    </VerticalStackLayout>-->
-
-    <VerticalStackLayout Padding="10" Spacing="10">
+    <!--<VerticalStackLayout Padding="10" Spacing="10">
         <Image x:Name="CoverImage"
                WidthRequest="200" HeightRequest="200"
                HorizontalOptions="Center"
@@ -38,11 +16,119 @@
         <Label x:Name="ArtistLabel" FontSize="18" HorizontalOptions="Center" />
         <Label x:Name="AlbumLabel" FontSize="16" HorizontalOptions="Center" />
 
-        <!-- Player de áudio -->
         <media:MediaElement x:Name="AudioPlayer"
                             ShouldShowPlaybackControls="False"
                             ShouldAutoPlay="True"
                             VerticalOptions="Center" />
-    </VerticalStackLayout>
+    </VerticalStackLayout>-->
+
+
+    <!--formato padrão-->
+
+    <!--<Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="12">
+
+        <Image Source="{Binding AlbumCover}"
+               WidthRequest="250" 
+               HeightRequest="250" 
+               Aspect="Fill"/>
+
+        -->
+    <!-- Barra de progresso customizável -->
+    <!--
+        <ProgressBar Grid.Row="1"
+                     Progress="{Binding Progress}"
+                     HeightRequest="6"
+                     BackgroundColor="Grey"
+                     ProgressColor="Green"/>
+
+        -->
+    <!-- Controles principais -->
+    <!--
+        <HorizontalStackLayout Grid.Row="2" Spacing="28" HorizontalOptions="Center">
+            <ImageButton Source="backaward_button.png"
+                         Command="{Binding PreviousCommand}"
+                         WidthRequest="42"/>
+            <ImageButton Source="play.png"
+                         Command="{Binding PlayPauseCommand}"
+                         WidthRequest="64"
+                         Aspect="AspectFit"/>
+            <ImageButton Source="forward_button.png"
+                         Command="{Binding NextCommand}"
+                         WidthRequest="42"/>
+        </HorizontalStackLayout>
+
+        -->
+    <!-- Like / Dislike / Favoritar -->
+    <!--
+        <HorizontalStackLayout Grid.Row="3" Spacing="32" HorizontalOptions="Center">
+            <ImageButton Source="{Binding LikeIcon}"
+                         Command="{Binding LikeCommand}"
+                         WidthRequest="32"/>
+            <ImageButton Source="{Binding DislikeIcon}"
+                         Command="{Binding DislikeCommand}"
+                         WidthRequest="32"/>
+            <ImageButton Source="{Binding FavoriteIcon}"
+                         Command="{Binding FavoriteCommand}"
+                         WidthRequest="32"/>
+        </HorizontalStackLayout>
+
+    </Grid>-->
+
+
+    <Grid>
+
+        <Image Source="{Binding AlbumCover}" 
+               Opacity="0.1"
+               Aspect="AspectFill"/>
+
+        <StackLayout TranslationY="200" VerticalOptions="Center" HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal"
+                         Spacing="0"
+                         Margin="10,0,0,10">
+
+                <Image Source="{Binding AlbumCover}" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start" 
+                   Aspect="AspectFit"
+                   WidthRequest="150"
+                   HeightRequest="150"/>
+
+                <Grid Margin="10,0,0,0">
+                    <VerticalStackLayout Spacing="2.5">
+                        <Label Text="{Binding MusicInfo.Title}"
+                               WidthRequest="200"
+                               MaxLines="3" 
+                               LineBreakMode="TailTruncation" 
+                               FontSize="Large" LineHeight="0.8"
+                               FontFamily="SegoeWP-Bold"/>
+                        <Label Text="{Binding MusicInfo.Artist}"/>
+                    </VerticalStackLayout>
+                    
+                    <HorizontalStackLayout Spacing="20" VerticalOptions="End">
+                        <ImageButton Source="like_button.png"/>
+                        <ImageButton Source="unlike_button.png"/>
+                        <ImageButton Source="favorite.png"/>
+                    </HorizontalStackLayout>
+                </Grid>
+            </StackLayout>
+
+            <ProgressBar Progress="{Binding Progress}"
+                         Margin="10,0,0,30"
+                         HeightRequest="2"
+                         BackgroundColor="Grey"
+                         ProgressColor="Green"/>
+
+            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <ImageButton Grid.Column="0" Command="{Binding PreviousCommand}" Source="backaward_button.png"/>
+                <ImageButton Grid.Column="1" Command="{Binding PlayPauseCommand}" Source="play.png" Margin="50,0"/>
+                <ImageButton Grid.Column="2" Command="{Binding NextCommand}" Source="forward_button.png"/>
+            </Grid>
+        </StackLayout>
+    </Grid>
 
 </ContentPage>
