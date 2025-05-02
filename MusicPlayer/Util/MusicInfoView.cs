@@ -21,9 +21,6 @@ namespace MusicPlayer.Util
 			FileName = baseInfo.FileName;
 			CoverUrl = baseInfo.CoverUrl;
 			StreamUrl = baseInfo.StreamUrl;
-			// Monta a URL completa:
-			// baseClient e BaseAddress => ex.: http://10.0.2.2:5000
-			// m.CoverUrl => ex.: /images/cover1.jpg
 			CoverUrlAbsolute = new Uri(new Uri(service.BaseAddress), baseInfo.CoverUrl).ToString();
 		}
 	}

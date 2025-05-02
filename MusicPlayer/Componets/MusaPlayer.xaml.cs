@@ -5,6 +5,7 @@ using Plugin.Maui.Audio;
 
 namespace MusicPlayer.Componets;
 
+[QueryProperty(nameof(_musicId),"musicId")]
 public partial class MusaPlayer : ContentPage
 {
 	private readonly MusicApiService _service;
@@ -12,18 +13,18 @@ public partial class MusaPlayer : ContentPage
 
 	public PlayerViewModel ViewModel { get; set; }
 
-	public MusaPlayer(IAudioManager audioManager, MusicApiService service, int musicId)
+	public MusaPlayer(IAudioManager audioManager, MusicApiService service)
 	{
 		InitializeComponent();
 
 
-		ViewModel = new PlayerViewModel(audioManager, service, musicId);
+		ViewModel = new PlayerViewModel(audioManager, service, _musicId);
 
 		BindingContext = ViewModel;
 
 		// Pega instância via DI
 		_service = service;
-		_musicId = musicId;
+		//this._musicId = _musicId;
 	}
 
 	protected override async void OnAppearing()

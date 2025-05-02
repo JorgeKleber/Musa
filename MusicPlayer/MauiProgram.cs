@@ -2,6 +2,8 @@
 using CommunityToolkit.Maui;
 using MusicPlayer.Services;
 using Plugin.Maui.Audio;
+using MusicPlayer.ViewModels;
+using MusicPlayer.Views;
 
 namespace MusicPlayer
 {
@@ -26,6 +28,8 @@ namespace MusicPlayer
 
 			const string baseUrl = "http://192.168.1.8:5000";
 			builder.Services.AddSingleton<MusicApiService>(new MusicApiService(baseUrl));
+            builder.Services.AddSingleton<MusicHubViewModel>();
+            builder.Services.AddTransient<MusicHub>();
 			builder.AddAudio();
 
 			return builder.Build();

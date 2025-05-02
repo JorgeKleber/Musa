@@ -1,4 +1,5 @@
-﻿using MusicPlayer.Services;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using MusicPlayer.Services;
 using MusicPlayer.Util;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MusicPlayer.ViewModels
 {
@@ -24,6 +26,9 @@ namespace MusicPlayer.ViewModels
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Musics)));
 			}
 		}
+
+		//[ObservableProperty] string _searchText;
+		//public ICommand SearchCommand { get; set; }
 
 		public SearchPageViewModel(MusicApiService service)
 		{
