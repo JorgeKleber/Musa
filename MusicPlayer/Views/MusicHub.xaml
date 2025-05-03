@@ -5,48 +5,57 @@
              xmlns:models="clr-namespace:MusicPlayer.Models"
              x:Class="MusicPlayer.Views.MusicHub">
 
-    <VerticalStackLayout Margin="0,100,0,0" Padding="10" Spacing="10">
-        <Label Text="Favoritas" FontSize="24" />
+    <Grid Padding="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Label Text="Favoritas" FontSize="24" Grid.Row="1" />
 
         <!-- Coleção que exibe cada música -->
-        <CollectionView SelectionMode="Single"
+        <ScrollView Grid.Row="2">
+            <CollectionView SelectionMode="Single"
                         ItemsSource="{Binding Musics}"
                         SelectedItem="{Binding MusicsSelected}"
                         SelectionChangedCommand="{Binding SelectItemCommand, Mode=TwoWay}">
-            
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:MusicInfo">
-                    <Grid Padding="5" 
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:MusicInfo">
+                        <Grid Padding="5" 
                           ColumnDefinitions="80, *, Auto" 
                           VerticalOptions="Center">
 
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal"/>
-                                <VisualState x:Name="Selected">
-                                    <VisualState.Setters>
-                                        <Setter Property="BackgroundColor" Value="Transparent"/>
-                                    </VisualState.Setters>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Transparent"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
 
 
-                        <!-- Imagem da capa do álbum -->
-                        <Image Grid.Column="0"
+                            <!-- Imagem da capa do álbum -->
+                            <Image Grid.Column="0"
                                WidthRequest="70" HeightRequest="70"
                                Aspect="AspectFill"
                                Source="{Binding CoverUrlAbsolute}" />
 
-                        <!-- Título e artista -->
-                        <VerticalStackLayout Grid.Column="1" Padding="10,0">
-                            <Label Text="{Binding Title}" FontAttributes="Bold" />
-                            <Label Text="{Binding Artist}" FontSize="12" />
-                        </VerticalStackLayout>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </VerticalStackLayout>
+                            <!-- Título e artista -->
+                            <VerticalStackLayout Grid.Column="1" Padding="10,0">
+                                <Label Text="{Binding Title}" FontAttributes="Bold" />
+                                <Label Text="{Binding Artist}" FontSize="12" />
+                            </VerticalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </Grid>
 
 </ContentView>

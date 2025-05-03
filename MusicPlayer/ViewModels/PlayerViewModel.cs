@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace MusicPlayer.ViewModels
 {
+	[QueryProperty(nameof(MusicId), "musicId")]
 	public partial class PlayerViewModel : ObservableObject
 	{
 		private readonly IAudioManager _audioManager;
@@ -18,7 +19,8 @@ namespace MusicPlayer.ViewModels
 		private CancellationTokenSource? _cts;
 		private IDispatcherTimer _timer;
 		private readonly MusicApiService _service;
-		private int _musicId;
+		[ObservableProperty]
+		private int musicId;
 		private bool isPlaying = false;
 
 
@@ -39,19 +41,16 @@ namespace MusicPlayer.ViewModels
 
 		private bool _liked, _disliked, _favorited;
 
-		public PlayerViewModel(IAudioManager audioManager, MusicApiService service, int musicId)
+		public PlayerViewModel(IAudioManager audioManager, MusicApiService service)
 		{
 
 			_service = service;
-			_musicId = musicId;
 			_audioManager = audioManager;
 		}
 
-		// --- Comandos ---
-
 		public async Task LoadMusic()
 		{
-			MusicInfo = await _service.GetMusicByIdAsync(_musicId).ConfigureAwait(false);
+			MusicInfo = await _service.GetMusicByIdAsync(MusicId).ConfigureAwait(false);
 			AlbumCover = _service.BaseAddress + MusicInfo.CoverUrl;
 			_cts = new CancellationTokenSource();
 
@@ -60,12 +59,10 @@ namespace MusicPlayer.ViewModels
 			var httpObj = new HttpClient();
 			var musicStream = await httpObj.GetStreamAsync(musicUrl).ConfigureAwait(false);
 
-			// O restante do código pode continuar na UI thread se necessário
 			_player = _audioManager.CreateAsyncPlayer(musicStream);
 
 			isPlaying = true;
 
-			// Timer para atualizar progresso
 			_timer = Application.Current.Dispatcher.CreateTimer();
 			_timer.Interval = TimeSpan.FromMilliseconds(500);
 			_timer.Tick += (_, _) => Progress = _player.CurrentPosition / _player.Duration;
